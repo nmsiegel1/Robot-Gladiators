@@ -3,12 +3,14 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-var enemyName = "Roberto";
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+
 //Create function 
-var fight = function() {
+var fight = function(enemyName) {
+    //fight function statements
     //Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
 
@@ -57,7 +59,7 @@ if (playerHealth <= 0) {
         playerMoney = playerMoney - 2;
     }
 
-    //if no (false), ask questino again but running fight() again
+    //if no (false), ask question again by running fight() again
     else {
         fight();
     }
@@ -68,4 +70,6 @@ if (playerHealth <= 0) {
 };
 
 //Execute function
-fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
